@@ -31,5 +31,16 @@ namespace LinePoint.BL
         {
             this.end = end;
         }
+        public double getLength ()
+        {
+            double length = begin.distanceWithObjects(end);
+            return length;
+        }
+        public double getGradient ()
+        {
+            double m = (this.end.y - this.begin.y) / (this.end.x - this.begin.x);
+            return m;
+        }
+
     }
 }
