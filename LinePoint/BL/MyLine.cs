@@ -15,6 +15,11 @@ namespace LinePoint.BL
             this.begin = begin;
             this.end = end;
         }
+        public MyLine ()
+        {
+            this.begin = null;
+            this.end = null;
+        }
         public MyPoint getBegin ()
         {
             return this.begin;
