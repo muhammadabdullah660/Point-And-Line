@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LinePoint.BL;
+using LinePoint.UI;
 namespace LinePoint
 {
     class Program
     {
-
-
         static void Main ()
         {
             MyLine newLine = new MyLine();
-            MyPoint begin = new MyPoint();
-            MyPoint end = new MyPoint();
             int op = 0;
             while (op < 10)
             {
@@ -22,52 +19,48 @@ namespace LinePoint
                 op = mainMenu();
                 if (op == 1)
                 {
-                    makeLine(ref newLine , ref begin , ref end);
                     clearScreen();
+                    newLine = MyPointUI.makeLineInput();
                 }
                 else if (op == 2)
                 {
-                    updateBeginPoint(ref newLine , ref begin);
-
+                    clearScreen();
+                    MyPointUI.updateBeginPoint(ref newLine);
                 }
                 else if (op == 3)
                 {
-                    updateEndPoint(ref newLine , ref end);
-
+                    clearScreen();
+                    MyPointUI.updateEndPoint(ref newLine);
                 }
                 else if (op == 4)
                 {
-                    showBeginPoint(ref newLine);
-
+                    clearScreen();
+                    MyPointUI.showBeginPoint(ref newLine);
                 }
                 else if (op == 5)
                 {
-                    showEndPoint(ref end);
-
+                    clearScreen();
+                    MyPointUI.showEndPoint(ref newLine);
                 }
                 else if (op == 6)
                 {
-                    double l = getLength(ref newLine);
-                    Console.WriteLine($"Length = {l}");
-
+                    clearScreen();
+                    MyLineUI.getLength(ref newLine);
                 }
                 else if (op == 7)
                 {
-                    double g = getGradient(ref newLine);
-                    Console.WriteLine($"Gradient = {g}");
-
+                    clearScreen();
+                    MyLineUI.getGradient(ref newLine);
                 }
                 else if (op == 8)
                 {
-                    double d = distanceBegin(ref begin);
-                    Console.WriteLine($"Distance = {d}");
-
-
+                    clearScreen();
+                    MyPointUI.distanceEnd();
                 }
                 else if (op == 9)
                 {
-                    double d = distanceEnd(ref end);
-                    Console.WriteLine($"Distance = {d}");
+                    clearScreen();
+                    MyPointUI.distanceEnd();
                 }
             }
         }
@@ -95,96 +88,6 @@ namespace LinePoint
             Console.WriteLine("10- Exit");
             op = int.Parse(Console.ReadLine());
             return op;
-
-        }
-        static void makeLine (ref MyLine newLine , ref MyPoint begin , ref MyPoint end)
-        {
-            int x, y;
-            Console.WriteLine("Enter Co-ordinates of Begin Point:");
-            Console.WriteLine("Enter X Co-ordinate:");
-            x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y Co-ordinate:");
-            y = int.Parse(Console.ReadLine());
-            // With Parameterized Constructor
-            begin = new MyPoint(x , y);
-
-            Console.WriteLine("Enter Co-ordinates of End Point:");
-            Console.WriteLine("Enter X Co-ordinate:");
-            x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y Co-ordinate:");
-            y = int.Parse(Console.ReadLine());
-            // With Default Constructor and Public Behaviors
-            end = new MyPoint();
-            end.setX(x);
-            end.setY(y);
-
-            newLine = new MyLine(begin , end);
-
-
-        }
-        static void updateBeginPoint (ref MyLine newLine , ref MyPoint begin)
-        {
-            Console.WriteLine("Enter Co-ordinates of Begin Point:");
-            Console.WriteLine("Enter X Co-ordinate:");
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y Co-ordinate:");
-            int y = int.Parse(Console.ReadLine());
-            begin.setXY(x , y);
-            newLine.setBegin(begin);
-            Console.WriteLine("Point Updated");
-        }
-        static void updateEndPoint (ref MyLine newLine , ref MyPoint end)
-        {
-            Console.WriteLine("Enter Co-ordinates of End Point:");
-            Console.WriteLine("Enter X Co-ordinate:");
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y Co-ordinate:");
-            int y = int.Parse(Console.ReadLine());
-            end.setXY(x , y);
-            newLine.setEnd(end);
-            Console.WriteLine("Point Updated");
-        }
-        static void showBeginPoint (ref MyLine newLine)
-        {
-            MyPoint begin1 = new MyPoint();
-            begin1 = newLine.getBegin();
-            Console.WriteLine("Co-ordinates of Begin Point:");
-            Console.WriteLine("X Co-ordinate:");
-            int x = begin1.getX();
-            Console.WriteLine("Y Co-ordinate:");
-            int y = begin1.getY();
-
-            Console.WriteLine($"{x},{y}");
-        }
-        static void showEndPoint (ref MyPoint end)
-        {
-            Console.WriteLine("Co-ordinates of End Point:");
-            Console.WriteLine("X Co-ordinate:");
-            int x = end.getX();
-            Console.WriteLine("Y Co-ordinate:");
-            int y = end.getY();
-
-            Console.WriteLine($"{x},{y}");
-        }
-        static double getLength (ref MyLine newLine)
-        {
-            double length = newLine.getLength();
-            return length;
-        }
-        static double getGradient (ref MyLine newLine)
-        {
-            double gradient = newLine.getGradient();
-            return gradient;
-        }
-        static double distanceBegin (ref MyPoint begin)
-        {
-            double d = begin.distancefromZero();
-            return d;
-        }
-        static double distanceEnd (ref MyPoint end)
-        {
-            double d = end.distancefromZero();
-            return d;
         }
     }
 }

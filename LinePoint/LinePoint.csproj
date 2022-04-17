@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\MyLine.cs" />
+    <Compile Include="BL\MyPoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\MyLineUI.cs" />
+    <Compile Include="UI\MyPointUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
