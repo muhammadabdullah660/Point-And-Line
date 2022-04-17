@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LinePoint.BL.MyLine">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAECEAAEAAAAAAAAAIAQAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>BL\MyLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LinePoint.BL.MyPoint">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIABIAAGAAAAAAAAAAAAAABgAGAAAAA=</HashCode>
+      <FileName>BL\MyPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LinePoint.UI.MyLineUI">
+    <Position X="14.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>UI\MyLineUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LinePoint.UI.MyPointUI">
+    <Position X="16" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABABCAQAAAAAAAAAAAAAQAAEAAEAAAAIAAAAAAAA=</HashCode>
+      <FileName>UI\MyPointUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
