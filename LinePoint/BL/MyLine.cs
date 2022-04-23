@@ -8,8 +8,8 @@ namespace LinePoint.BL
 {
     class MyLine
     {
-        public MyPoint begin;
-        public MyPoint end;
+        private MyPoint begin;
+        private MyPoint end;
         public MyLine (MyPoint begin , MyPoint end)
         {
             this.begin = begin;
@@ -43,7 +43,7 @@ namespace LinePoint.BL
         }
         public double getGradient ()
         {
-            double m = (this.end.y - this.begin.y) / (this.end.x - this.begin.x);
+            double m = (this.end.getY() - this.begin.getY()) / (this.end.getX() - this.begin.getX());
             return m;
         }
 

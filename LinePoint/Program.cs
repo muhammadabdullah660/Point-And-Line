@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LinePoint.BL;
 using LinePoint.UI;
+using LinePoint.DL;
 namespace LinePoint
 {
     class Program
@@ -12,6 +13,7 @@ namespace LinePoint
         static void Main ()
         {
             MyLine newLine = new MyLine();
+            MyLineDL.loadFromFile("Line.txt" , ref newLine);
             int op = 0;
             while (op < 10)
             {
@@ -55,13 +57,14 @@ namespace LinePoint
                 else if (op == 8)
                 {
                     clearScreen();
-                    MyPointUI.distanceEnd();
+                    MyPointUI.distanceBegin(ref newLine);
                 }
                 else if (op == 9)
                 {
                     clearScreen();
-                    MyPointUI.distanceEnd();
+                    MyPointUI.distanceEnd(ref newLine);
                 }
+                MyLineDL.storeIntoFile("Line.txt" , newLine);
             }
         }
         static void clearScreen ()

@@ -8,8 +8,8 @@ namespace LinePoint.BL
 {
     class MyPoint
     {
-        public int x;
-        public int y;
+        private int x;
+        private int y;
         public MyPoint ()
         {
             x = 0;
@@ -58,7 +58,9 @@ namespace LinePoint.BL
         public double distancefromZero ()
         {
             double distanceZero;
-            distanceZero = Math.Pow(this.x - 0 , 2) + Math.Pow(this.y - 0 , 2);
+            distanceZero = Math.Pow(this.x , 2) + Math.Pow(this.y , 2);
+
+
             distanceZero = Math.Sqrt(distanceZero);
             return distanceZero;
         }

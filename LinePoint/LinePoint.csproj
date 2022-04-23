@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BL\MyLine.cs" />
     <Compile Include="BL\MyPoint.cs" />
+    <Compile Include="DL\MyLineDL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\MyLineUI.cs" />

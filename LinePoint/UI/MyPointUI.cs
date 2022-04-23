@@ -8,8 +8,8 @@ namespace LinePoint.UI
 {
     class MyPointUI
     {
-        public static MyPoint begin = new MyPoint();
-        public static MyPoint end = new MyPoint();
+        private static MyPoint begin = new MyPoint();
+        private static MyPoint end = new MyPoint();
         public static MyLine makeLineInput ()
         {
             int x, y;
@@ -72,20 +72,21 @@ namespace LinePoint.UI
         {
             Console.WriteLine("Co-ordinates of End Point:");
             Console.WriteLine("X Co-ordinate:");
-            int x = newLine.end.getX();
+            int x = newLine.getEnd().getX();
             Console.WriteLine("Y Co-ordinate:");
-            int y = newLine.end.getY();
+            int y = newLine.getEnd().getY();
 
             Console.WriteLine($"{x},{y}");
         }
-        public static void distanceBegin ()
+        public static void distanceBegin (ref MyLine newLine)
         {
-            double d = begin.distancefromZero();
+
+            double d = newLine.getBegin().distancefromZero();
             Console.WriteLine($"Distance = {d}");
         }
-        public static void distanceEnd ()
+        public static void distanceEnd (ref MyLine newLine)
         {
-            double d = end.distancefromZero();
+            double d = newLine.getEnd().distancefromZero();
             Console.WriteLine($"Distance = {d}");
         }
     }
